@@ -1,7 +1,12 @@
 ## Ignore development files that are not relative for project
 
+#############
+## Eagle
+#############
 
-
+# Ignore the board and schematic backup files
+*.b#?
+*.s#?
 
 
 
