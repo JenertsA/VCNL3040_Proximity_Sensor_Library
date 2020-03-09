@@ -1,14 +1,15 @@
-#ifndef VCNL3040.h
+#ifndef VCNL3040_h
 
-#define VCNL3040.h
+#define VCNL3040_h
 #include "Arduino.h"
 
 
-#define VCNL3040_addr 0x60
-
 //// VCNL3040 PARAMETERS ////
-enum VCNL3040
+enum VCNL3040_PARAM
 {
+
+    DEV_ADDRESS = 0x60,
+
     //LED current settings
     LED_CURRENT_50mA = 0x00,
     LED_CURRENT_75mA = 0x01,
@@ -39,6 +40,39 @@ enum VCNL3040
     PS_IT_CLOSING = 0x01,
     PS_IT_AWAY = 0x02,
     PS_IT_CLOSING_AWAY = 0x03
+};
+
+
+
+class VCNL3040
+{
+    public:
+
+
+    /**
+         *@param sensNum set which sensor is it
+        **/
+    VCNL3040(uint8_t sensNum); //uint8_t addr = VCNL3040_PARAM::DEV_ADDRESS
+
+
+    /**
+         * FUNCTION FOR READING 16 bits (two 8-bit registers)
+         * @param devAddr Device slave address
+         * @param cmdCode Command code from which to request data
+         * @return return 16-bits with DataByteHigh first and then DataByteLow
+        **/
+    uint16_t readCommand(uint8_t devAddr, uint8_t cmdCode);
+
+    /**
+         * FUNCTION FOR WRITING 16 bits (two 8-bit registers)
+         * @param devAddr Device slave address
+         * @param cmdCode Command code to which write data
+         * @param value 16-bit value to write in command
+        **/
+    void writeToCommand(uint8_t DevAddr, uint8_t cmdCode, uint16_t value);
+
+    private:
+
 };
 
 
