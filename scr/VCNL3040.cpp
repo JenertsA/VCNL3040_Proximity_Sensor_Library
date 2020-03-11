@@ -1,6 +1,39 @@
+/**
+    This is a library written for the VCNL3040
+    
+    I intend to sell a board with this particular sensor
+    once it will be available for sell link will show up here:
+
+    Written by Andris Jenerts @ SIG, March 2020
+
+    VCNL3040 integrates a proximity sensor (PS), and a high
+    power IRED into one small package. Besides selectable 12-bit 
+    or 16-bit output, it has programmable interrupt features of
+    individual high and low threshold levels. 
+
+    This library handles the VCNL3040 register setup and is able to
+    make proximity and interrup flag readings
+
+   //SAITE
+
+    Development environment specifics:
+    Arduino IDE 1.8.10
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY
+
+    Copyright (c) 2020 Andris Jenerts. All rights reserved.
+
+    This work is licensed under the terms of the MIT license.  
+    For a copy, see <https://opensource.org/licenses/MIT>.
+
+*/
+
+
+
 #include "VCNL3040.h"
 
-#define DEBUG 
+
 
 VCNL3040::VCNL3040(){};
 
