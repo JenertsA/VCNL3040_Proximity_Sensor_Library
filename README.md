@@ -5,7 +5,9 @@ The VCNL3040 Proximity sensor from Vishay integrates sensing element with high p
 
 Programmable interrupt feature can help reduce the workload on MCU and decrease power consumption. It is possible to setup low and high thresholds for interrupt. In addition, Proximity detection logic output mode allows to detect closing objects and when it moves away.
 
-Repository Contents
+Here you will find link to the tindie shope once boards will be up there:
+
+You can find
 -------------------
 
 * **/examples** - :ghost: TO DO
@@ -13,10 +15,16 @@ Repository Contents
 * **keywords.txt** - Keywords from this library that will be highlighted in the Arduino IDE. 
 * **library.properties** - General library properties for the Arduino package manager.
 
+TODO LIST
+------------------
+- [ ] Example code
+- [ ] Features from PS_CONF3 register
+- [ ] Add boards to Tindie
+
 License Information
 -------------------
 
-This product is _**open source**_! 
+This code is _**open source**_! 
 
 Please review the LICENSE.md file for license information.
 
@@ -24,4 +32,3 @@ Please use, reuse, and modify these files as you see fit. Please maintain attrib
 
 Distributed as-is; no warranty is given.
 
-- JenertsA
