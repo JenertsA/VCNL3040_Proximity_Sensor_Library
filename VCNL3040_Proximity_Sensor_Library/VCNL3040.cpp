@@ -10,11 +10,11 @@ bool VCNL3040::begin(bool _resetToDefault)
     {
         if(_resetToDefault)
         {
-            writeToCommand(VCNL3040_PARAM::DEV_ADDRESS,0x03,0x0003);
-            writeToCommand(VCNL3040_PARAM::DEV_ADDRESS,0x04,0x00);
-            writeToCommand(VCNL3040_PARAM::DEV_ADDRESS,0x05,0x00);
-            writeToCommand(VCNL3040_PARAM::DEV_ADDRESS,0x06,0x00);
-            writeToCommand(VCNL3040_PARAM::DEV_ADDRESS,0x07,0x00);
+            writeToCommand(VCNL3040_DEV_ADDRESS,0x03,0x0003);
+            writeToCommand(VCNL3040_DEV_ADDRESS,0x04,0x00);
+            writeToCommand(VCNL3040_DEV_ADDRESS,0x05,0x00);
+            writeToCommand(VCNL3040_DEV_ADDRESS,0x06,0x00);
+            writeToCommand(VCNL3040_DEV_ADDRESS,0x07,0x00);
         }
         return true;
     }
@@ -23,7 +23,7 @@ bool VCNL3040::begin(bool _resetToDefault)
 
 bool VCNL3040::isConnected()
 {
-    Wire.beginTransmission(VCNL3040_PARAM::DEV_ADDRESS);
+    Wire.beginTransmission(VCNL3040_DEV_ADDRESS);
     if(Wire.endTransmission() == 0) //ack
     {
         if(readCommand(0x60, 0x0C) == 0x186)
@@ -37,23 +37,23 @@ bool VCNL3040::isConnected()
 
 void VCNL3040::startReading()
 {
-    _currentSetting = _currentSetting = readCommand(VCNL3040_PARAM::DEV_ADDRESS, 0x03);  
+    _currentSetting = _currentSetting = readCommand(VCNL3040_DEV_ADDRESS, 0x03);  
     _currentSetting = _currentSetting & 0xFFFE;
 
-    writeToCommand(VCNL3040_PARAM::DEV_ADDRESS, 0x03, _currentSetting);
+    writeToCommand(VCNL3040_DEV_ADDRESS, 0x03, _currentSetting);
 }
 
 void VCNL3040::sleep()
 {
-    _currentSetting = _currentSetting = readCommand(VCNL3040_PARAM::DEV_ADDRESS, 0x03);  
+    _currentSetting = _currentSetting = readCommand(VCNL3040_DEV_ADDRESS, 0x03);  
     _currentSetting = _currentSetting | 0x01;
 
-    writeToCommand(VCNL3040_PARAM::DEV_ADDRESS, 0x03, _currentSetting);
+    writeToCommand(VCNL3040_DEV_ADDRESS, 0x03, _currentSetting);
 }
 
 uint8_t VCNL3040::readINTFlag()
 {
-    _currentValue = readCommand(VCNL3040_PARAM::DEV_ADDRESS, 0x0B);
+    _currentValue = readCommand(VCNL3040_DEV_ADDRESS, 0x0B);
     _highByte = _currentValue >> 8;
 
     return _highByte;
@@ -61,7 +61,7 @@ uint8_t VCNL3040::readINTFlag()
 
 uint16_t VCNL3040::readPSData()
 {
-    _currentValue = readCommand(VCNL3040_PARAM::DEV_ADDRESS, 0x08);
+    _currentValue = readCommand(VCNL3040_DEV_ADDRESS, 0x08);
 
     return _currentValue;
 }
@@ -71,87 +71,87 @@ uint16_t VCNL3040::readPSData()
 
 void VCNL3040::setLedCurrent(uint8_t _ledCurrentSetting)
 {
-    _currentSetting = readCommand(VCNL3040_PARAM::DEV_ADDRESS, 0x04);
+    _currentSetting = readCommand(VCNL3040_DEV_ADDRESS, 0x04);
     _currentSetting = _currentSetting & 0xF8FF;
     _currentSetting = _currentSetting | (_ledCurrentSetting << 8);
 
-    writeToCommand(VCNL3040_PARAM::DEV_ADDRESS, 0x04, _currentSetting);
+    writeToCommand(VCNL3040_DEV_ADDRESS, 0x04, _currentSetting);
 }
 
 
 void VCNL3040::setPSDuty(uint8_t _PSDutySetting)
 {
-    _currentSetting = readCommand(VCNL3040_PARAM::DEV_ADDRESS, 0x03);
+    _currentSetting = readCommand(VCNL3040_DEV_ADDRESS, 0x03);
     _currentSetting = _currentSetting & 0xFF3F;
     _currentSetting = _currentSetting | (_PSDutySetting << 6);
 
-    writeToCommand(VCNL3040_PARAM::DEV_ADDRESS, 0x03, _currentSetting);
+    writeToCommand(VCNL3040_DEV_ADDRESS, 0x03, _currentSetting);
 }
 
 void VCNL3040::setPSIT(uint8_t _psITSetting)
 {
-    _currentSetting = readCommand(VCNL3040_PARAM::DEV_ADDRESS, 0x03);
+    _currentSetting = readCommand(VCNL3040_DEV_ADDRESS, 0x03);
     _currentSetting = _currentSetting & 0xFFF1;
     _currentSetting = _currentSetting | (_psITSetting << 1);
 
-    writeToCommand(VCNL3040_PARAM::DEV_ADDRESS, 0x03, _currentSetting);
+    writeToCommand(VCNL3040_DEV_ADDRESS, 0x03, _currentSetting);
 }
 
 void VCNL3040::setPSResolution(bool _psResolutionSetting)
 {
-    _currentSetting = _currentSetting = readCommand(VCNL3040_PARAM::DEV_ADDRESS, 0x03);
+    _currentSetting = _currentSetting = readCommand(VCNL3040_DEV_ADDRESS, 0x03);
     _currentSetting = _currentSetting & 0xF7FF;
     _currentSetting = _currentSetting | (_psResolutionSetting<<11);
     
-    writeToCommand(VCNL3040_PARAM::DEV_ADDRESS, 0x03, _currentSetting);
+    writeToCommand(VCNL3040_DEV_ADDRESS, 0x03, _currentSetting);
 }
 
 
 
 void VCNL3040::setINTMode(uint8_t _psINTMode)
 {
-    _currentSetting = _currentSetting = readCommand(VCNL3040_PARAM::DEV_ADDRESS, 0x03);
+    _currentSetting = _currentSetting = readCommand(VCNL3040_DEV_ADDRESS, 0x03);
     _currentSetting = _currentSetting & 0xFCFF;
     _currentSetting = _currentSetting | (_psINTMode<<8);
     
-    writeToCommand(VCNL3040_PARAM::DEV_ADDRESS, 0x03, _currentSetting);
+    writeToCommand(VCNL3040_DEV_ADDRESS, 0x03, _currentSetting);
 }
 
 void VCNL3040::enableINTProxMode()
 {
-    _currentSetting = readCommand(VCNL3040_PARAM::DEV_ADDRESS, 0x04);
+    _currentSetting = readCommand(VCNL3040_DEV_ADDRESS, 0x04);
     _currentSetting = _currentSetting & 0xBFFF;
     _currentSetting = _currentSetting | (0x01 << 14);
 
-    writeToCommand(VCNL3040_PARAM::DEV_ADDRESS, 0x04, _currentSetting);
+    writeToCommand(VCNL3040_DEV_ADDRESS, 0x04, _currentSetting);
 }
 
 void VCNL3040::enableINTNormalMode()
 {
-    _currentSetting = readCommand(VCNL3040_PARAM::DEV_ADDRESS, 0x04);
+    _currentSetting = readCommand(VCNL3040_DEV_ADDRESS, 0x04);
     _currentSetting = _currentSetting & 0xBFFF;
     _currentSetting = _currentSetting | (0x00 << 14);
 
-    writeToCommand(VCNL3040_PARAM::DEV_ADDRESS, 0x04, _currentSetting);
+    writeToCommand(VCNL3040_DEV_ADDRESS, 0x04, _currentSetting);
 }
 
 void VCNL3040::setPSPers(uint8_t _psPersSetting)
 {
-    _currentSetting = _currentSetting = readCommand(VCNL3040_PARAM::DEV_ADDRESS, 0x03);
+    _currentSetting = _currentSetting = readCommand(VCNL3040_DEV_ADDRESS, 0x03);
     _currentSetting = _currentSetting & 0xFFCF;
     _currentSetting = _currentSetting | (_psPersSetting << 4);
     
-    writeToCommand(VCNL3040_PARAM::DEV_ADDRESS, 0x03, _currentSetting);
+    writeToCommand(VCNL3040_DEV_ADDRESS, 0x03, _currentSetting);
 }
 
 void VCNL3040::setPSTHDL(uint16_t _THDLValue)
 {
-    writeToCommand(VCNL3040_PARAM::DEV_ADDRESS, 0x06, _THDLValue);
+    writeToCommand(VCNL3040_DEV_ADDRESS, 0x06, _THDLValue);
 }
 
 void VCNL3040::setPSTHDH(uint16_t _THDHValue)
 {
-    writeToCommand(VCNL3040_PARAM::DEV_ADDRESS, 0x07, _THDHValue);
+    writeToCommand(VCNL3040_DEV_ADDRESS, 0x07, _THDHValue);
 }
 
 

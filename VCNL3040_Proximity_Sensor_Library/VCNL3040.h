@@ -9,7 +9,7 @@
 enum VCNL3040_PARAM
 {
 
-    DEV_ADDRESS = 0x60,
+    VCNL3040_DEV_ADDRESS = 0x60,
 
     ///LED current settings
     LED_CURRENT_50mA = 0x00,
