@@ -14,7 +14,7 @@
     This library handles the VCNL3040 register setup and is able to
     make proximity and interrup flag readings
 
-   //SAITE
+   https://github.com/JenertsA/VCNL3040_Proximity_Sensor_Library
 
     Development environment specifics:
     Arduino IDE 1.8.10
