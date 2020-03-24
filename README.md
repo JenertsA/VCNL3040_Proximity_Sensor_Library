@@ -36,11 +36,11 @@ start by including library and making VCNL3040 object
 
 `sens.readPSData()` - returns `unsigned int` value of last measurment value.<br>
 
-`sens.readINTFlag()` - returns interupt status
+`sens.readINTFlag()` - returns interrupt status
 
 INT flag value | meaning 
 -----|------
-0x00 | interupt not triggered  
+0x00 | interrupt not triggered  
 0x01 | PS drops below PS_THDL (low interupt treshold)  
 0x02 | PS rises above PS_THDH (high interupt treshold) 
 0x03 | PS entering protection mode (what is that!?)
