@@ -110,10 +110,10 @@ PS_IT_8T0 | 0x07 | 8T
 
 <br>
 
-**Interupt settings**
+**Interrupt settings**
 
-By default setting interupt is disabled you can enable it by using function<br>
-`sens.setINTMode(value)` - enable interrupt in on of the modes - table below<br>
+By default setting interrupt is disabled you can enable it by using function<br>
+`sens.setINTMode(value)` - enable interrupt in one of the modes - table below<br>
 To effectively adopt PS INT function Vishay recommends `trigger by closing` mode
 value | HEX | trigger mode
 ------|-----|-----
@@ -123,8 +123,8 @@ PS_INT_AWAY | 0x02 | by away
 PS_INT_CLOSING_AWAY | 0x03 | by closing and away
 
 there are two interrput modes. You can switch between them using funtions:
-`sens.enableINTNormalMode()` - normal mode is when interup is triggered. <br> 
-It stays that way until you read out interup flag using function `sens.readINTFlag()`
+`sens.enableINTNormalMode()` - normal mode is when interrup is triggered. <br> 
+It stays that way until you read out interrup flag using function `sens.readINTFlag()`
 
 `sens.enableINTProxMode()` - proximity interrupt mode
 
