@@ -1,7 +1,7 @@
 VCNL3040 Proximity Sensor Library
 ===========================================================
 
-The VCNL3040 Proximity sensor from Vishay integrates sensing element with high power IR LED in a single small package. This sensor is ideal for detecting if something is in front of sensor. It is made to work up to 30 cm range and adjustable LED current, Duty cycle and Iteration Time can get useful for application specific integration.
+The VCNL3040 Proximity sensor from Vishay integrates sensing element with high power IR LED in a single small package. This sensor is ideal for detecting if something is in front of sensor. It is made to work up to 30 cm range and adjustable LED current, Duty cycle and integration Time can get useful for application specific integration.
 
 Programmable interrupt feature can help reduce the workload on MCU and decrease power consumption. It is possible to setup low and high thresholds for interrupt. In addition, Proximity detection logic output mode allows to detect closing objects and when it moves away.
 
