@@ -5,7 +5,9 @@ The VCNL3040 Proximity sensor from Vishay integrates sensing element with high p
 
 Programmable interrupt feature can help reduce the workload on MCU and decrease power consumption. It is possible to setup low and high thresholds for interrupt. In addition, Proximity detection logic output mode allows to detect closing objects and when it moves away.
 
-Here you will find link to the tindie shope once boards will be up there:
+Here you will find link to the tindie shop once boards will be up there:
+**[VCN3040 breakout board](https://www.tindie.com/products/jenertsa/vcnl3040-breakout/)** on Tindie
+![](https://cdn.tindiemedia.com/images/resize/uLIJQ6O9tM3doxCwJIUIHGCP2oI=/p/fit-in/1032x688/filters:fill(fff)/i/928471/products/2020-03-29T20%3A11%3A18.100Z-top_bottom.png)
 
 You can find
 -------------------
