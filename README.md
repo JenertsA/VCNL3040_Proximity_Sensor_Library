@@ -20,13 +20,15 @@ You can find
 How it works?
 ------------------
 
-start by including library and making VCNL3040 object
+start by including this and Wire libraries. Make a VCNL3040 object
 
     #include <VCNL3040.h>
-
+    #include <Wire.h>
+    
     VCNL3040 sens;
     
-    
+library doesn't call `Wire.begin()` you should do it yourself in `void setup()`.
+
 ### Basic functions
 
 `sens.begin()` - must be called to initialize sensor, <br>
