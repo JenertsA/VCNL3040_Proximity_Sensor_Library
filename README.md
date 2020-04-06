@@ -1,4 +1,4 @@
-VCNL3040 Proximity Sensor Library  <a href="https://www.tindie.com/products/jenertsa/vcnl3040-breakout/?ref=offsite_badges&utm_source=sellers_jenertsA&utm_medium=badges&utm_campaign=badge_small"><img src="https://d2ss6ovg47m0r5.cloudfront.net/badges/tindie-smalls.png" alt="I sell on Tindie" width="200" height="55"></a>
+VCNL3040 Proximity Sensor Library  
 ===========================================================
 
 The VCNL3040 Proximity sensor from Vishay integrates sensing element with high power IR LED in a single small package. This sensor is ideal for detecting if something is in front of sensor. It is made to work up to 30 cm range and adjustable LED current, Duty cycle and integration Time can get useful for application specific integration.
@@ -7,6 +7,8 @@ Programmable interrupt feature can help reduce the workload on MCU and decrease 
 
 Here you will find link to the tindie shop once boards will be up there:
 **[VCN3040 breakout board](https://www.tindie.com/products/jenertsa/vcnl3040-breakout/)** on Tindie
+<a href="https://www.tindie.com/products/jenertsa/vcnl3040-breakout/?ref=offsite_badges&utm_source=sellers_jenertsA&utm_medium=badges&utm_campaign=badge_small"><img src="https://d2ss6ovg47m0r5.cloudfront.net/badges/tindie-smalls.png" alt="I sell on Tindie" width="200" height="55"></a>
+
 ![](https://cdn.tindiemedia.com/images/resize/uLIJQ6O9tM3doxCwJIUIHGCP2oI=/p/fit-in/1032x688/filters:fill(fff)/i/928471/products/2020-03-29T20%3A11%3A18.100Z-top_bottom.png)
 
 You can find
